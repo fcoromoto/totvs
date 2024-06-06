@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  contas-db:
+    image: postgres:14-alpine
+    container_name: contas-db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: contas
+      POSTGRES_PASSWORD: postgres
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready", "-d", "db_prod" ]
+      interval: 10s
+      timeout: 60s
+      retries: 5
+
+  contas-app:
+    container_name: contas-app
+    build:
+      context: ../../
+      dockerfile: infra/docker/Dockerfile
+    ports:
+      - "8080:8080"
+      - "8000:8000"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://contas-db:5432/contas
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+    depends_on:
+      - contas-db
+    entrypoint: ["java","-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:8000", "-jar", "app.jar"]
