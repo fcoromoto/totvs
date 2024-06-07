@@ -5,10 +5,14 @@ services:
     image: postgres:14-alpine
     container_name: contas-db
     restart: always
+    ports:
+      - "5432:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_DB: contas
       POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./../db/contas-db-data:/var/lib/postgresql/data
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready", "-d", "db_prod" ]
       interval: 10s
