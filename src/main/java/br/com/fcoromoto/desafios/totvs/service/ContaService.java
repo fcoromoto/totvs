@@ -112,7 +112,7 @@ public class ContaService {
             while ((linha = csvReader.readNext()) != null) {
                 try {
 
-                    Long id = Long.parseLong(linha[0]); // Assuming ID is numeric
+                    Long id = null; // id ignorado do arquivo, será gerado pelo banco
                     LocalDate dataVencimento = LocalDate.parse(linha[1]);
                     LocalDate dataPagamento = StringUtils.hasText(linha[2]) ? LocalDate.parse(linha[2]) : null;
                     BigDecimal valor = new BigDecimal(linha[3]);
