@@ -14,4 +14,5 @@ O próprio arquivo possui uma documentação.
 ```
 
 * swagger habilitado em http://localhost:8080/swagger-ui.html
+* api dosc json em http://localhost:8080/api-docs
 * banco de dados exposto na porta 5432 com usuário e senha postgres

@@ -1,0 +1,52 @@
+### Cadastrar Conta
+POST http://localhost:8080/contas
+Content-Type: application/json
+
+{
+  "dataVencimento": "2024-06-30",
+  "valor": 100.50,
+  "descricao": "Sample Description"
+}
+
+### Recuperar Conta por ID
+GET http://localhost:8080/contas/1
+
+
+### Consulta Paginada de contas
+#GET http://localhost:8080/contas?page=0&size=10&sort=id
+#GET http://localhost:8080/contas?descricao=Sample Description
+GET http://localhost:8080/contas
+accept: */*
+
+### Consulta total pago no periodo
+GET http://localhost:8080/contas/dataPagamentoInicio/2024-06-01/dataPagamentoFim/2024-07-30
+accept: */*
+
+### Atualizar Conta
+PUT http://localhost:8080/contas/2
+Content-Type: application/json
+
+{
+  "dataVencimento": "2024-07-30",
+  "valor": 100.50,
+  "descricao": "Sample Description"
+}
+
+### Atualizar situacao conta
+PUT http://localhost:8080/contas/1/situacao/PAGO
+
+### Deletar Conta
+DELETE http://localhost:8080/contas/7
+
+### Importar Contas
+POST http://localhost:8080/contas/importar-contas
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="contas.csv"
+
+< /home/fcoromoto/Desenvolvimento/desafio-totvs/totvs/docs/contas.csv
+--WebAppBoundary--
+
+###
+

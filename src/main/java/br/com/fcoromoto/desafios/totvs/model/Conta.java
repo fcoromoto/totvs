@@ -1,8 +1,7 @@
 package br.com.fcoromoto.desafios.totvs.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.math.BigDecimal;
@@ -11,6 +10,10 @@ import java.time.LocalDate;
 @Setter
 @Getter
 @Entity
+@Table(name = "conta")
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Conta {
 
     @Id
