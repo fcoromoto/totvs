@@ -1,12 +1,17 @@
-FROM maven:3.9.2 AS builder
+FROM eclipse-temurin:21-jdk AS builder
 WORKDIR /tmp/app
 
+COPY mvnw .
+COPY .mvn .mvn
 COPY pom.xml .
+
+RUN ./mvnw dependency:go-offline
+
 COPY src src
 
-RUN --mount=type=cache,target=/root/.m2 mvn install -DskipTests
+RUN ./mvnw package -DskipTests
 
-FROM openjdk:17.0.2-oracle
+FROM eclipse-temurin:21-jre
 
 WORKDIR /workspace
 EXPOSE 8080 8000
