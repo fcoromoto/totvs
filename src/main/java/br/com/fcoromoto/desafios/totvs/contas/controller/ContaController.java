@@ -1,6 +1,6 @@
 package br.com.fcoromoto.desafios.totvs.contas.controller;
 
-import br.com.fcoromoto.desafios.totvs.contas.dto.salvarContaDTO;
+import br.com.fcoromoto.desafios.totvs.contas.dto.SalvarContaDTO;
 import br.com.fcoromoto.desafios.totvs.contas.dto.ContaDTO;
 import br.com.fcoromoto.desafios.totvs.contas.model.Conta;
 import br.com.fcoromoto.desafios.totvs.contas.model.Situacao;
@@ -58,13 +58,13 @@ public class ContaController {
     }
 
     @PostMapping
-    public ResponseEntity<ContaDTO> cadastrarConta(@Valid @RequestBody salvarContaDTO contaDTO) {
+    public ResponseEntity<ContaDTO> cadastrarConta(@Valid @RequestBody SalvarContaDTO contaDTO) {
         ContaDTO contaSalva = contaService.cadastrarConta(contaDTO);
         return ResponseEntity.ok(contaSalva);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ContaDTO> atualizarConta(@Valid @RequestBody salvarContaDTO contaDTO, @PathVariable Long id) {
+    public ResponseEntity<ContaDTO> atualizarConta(@Valid @RequestBody SalvarContaDTO contaDTO, @PathVariable Long id) {
         ContaDTO contaSalva = contaService.atualizarConta(contaDTO, id);
         return ResponseEntity.ok(contaSalva);
     }

@@ -1,6 +1,6 @@
 package br.com.fcoromoto.desafios.totvs.contas.service;
 
-import br.com.fcoromoto.desafios.totvs.contas.dto.salvarContaDTO;
+import br.com.fcoromoto.desafios.totvs.contas.dto.SalvarContaDTO;
 import br.com.fcoromoto.desafios.totvs.contas.dto.ContaDTO;
 import br.com.fcoromoto.desafios.totvs.contas.mapper.ContaMapper;
 import br.com.fcoromoto.desafios.totvs.contas.model.Conta;
@@ -57,14 +57,14 @@ public class ContaService {
         return contaMapper.fromEntityToContaDto(conta);
     }
 
-    public ContaDTO cadastrarConta(salvarContaDTO dto) {
+    public ContaDTO cadastrarConta(SalvarContaDTO dto) {
         Conta conta = contaMapper.fromSalvarContaDtoToEntity(dto);
         conta.setSituacao(Situacao.PENDENTE);
         contaRepository.save(conta);
         return contaMapper.fromEntityToContaDto(conta);
     }
 
-    public ContaDTO atualizarConta(salvarContaDTO dto, Long id) {
+    public ContaDTO atualizarConta(SalvarContaDTO dto, Long id) {
         Conta conta = recuperarContaPorId(id);
         contaMapper.atualizarConta(dto, conta);
         contaRepository.save(conta);
@@ -98,7 +98,7 @@ public class ContaService {
         contaRepository.saveAll(contas);
     }
 
-    private List<Conta> parseCSVFile(MultipartFile arquivo) throws IOException, CsvValidationException {
+    public List<Conta> parseCSVFile(MultipartFile arquivo) throws IOException, CsvValidationException {
         List<Conta> contas = new ArrayList<>();
 
         try (Reader reader = new BufferedReader(new InputStreamReader(arquivo.getInputStream()))) {

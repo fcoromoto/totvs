@@ -10,7 +10,7 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
-public class salvarContaDTO implements Serializable {
+public class SalvarContaDTO implements Serializable {
 
     @NotNull
     private LocalDate dataVencimento;
