@@ -1,6 +1,6 @@
-package br.com.fcoromoto.desafios.totvs.dto;
+package br.com.fcoromoto.desafios.totvs.contas.dto;
 
-import br.com.fcoromoto.desafios.totvs.model.Situacao;
+import br.com.fcoromoto.desafios.totvs.contas.model.Situacao;
 import lombok.Getter;
 import lombok.Setter;
 

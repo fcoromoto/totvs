@@ -1,6 +1,6 @@
-package br.com.fcoromoto.desafios.totvs.repository;
+package br.com.fcoromoto.desafios.totvs.contas.repository;
 
-import br.com.fcoromoto.desafios.totvs.model.Conta;
+import br.com.fcoromoto.desafios.totvs.contas.model.Conta;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

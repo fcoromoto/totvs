@@ -1,6 +1,7 @@
 ### Cadastrar Conta
 POST http://localhost:8080/contas
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0ZUBlbWFpbCIsImlhdCI6MTcxODE5MDMzNSwiZXhwIjoxNzE4Mjc2NzM1fQ.m800Wy-sQg76-GTMFxXUFEsQLksLtXn7_AxB1Df4bt0
 
 {
   "dataVencimento": "2024-06-30",
@@ -49,4 +50,3 @@ Content-Disposition: form-data; name="file"; filename="contas.csv"
 --WebAppBoundary--
 
 ###
-

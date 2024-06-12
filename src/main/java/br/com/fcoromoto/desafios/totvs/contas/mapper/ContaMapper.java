@@ -1,8 +1,8 @@
-package br.com.fcoromoto.desafios.totvs.mapper;
+package br.com.fcoromoto.desafios.totvs.contas.mapper;
 
-import br.com.fcoromoto.desafios.totvs.dto.salvarContaDTO;
-import br.com.fcoromoto.desafios.totvs.dto.ContaDTO;
-import br.com.fcoromoto.desafios.totvs.model.Conta;
+import br.com.fcoromoto.desafios.totvs.contas.dto.salvarContaDTO;
+import br.com.fcoromoto.desafios.totvs.contas.dto.ContaDTO;
+import br.com.fcoromoto.desafios.totvs.contas.model.Conta;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 

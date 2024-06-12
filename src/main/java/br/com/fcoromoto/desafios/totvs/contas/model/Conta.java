@@ -1,4 +1,4 @@
-package br.com.fcoromoto.desafios.totvs.model;
+package br.com.fcoromoto.desafios.totvs.contas.model;
 
 import jakarta.persistence.*;
 import lombok.*;

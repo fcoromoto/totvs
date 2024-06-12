@@ -1,10 +1,10 @@
-package br.com.fcoromoto.desafios.totvs.controller;
+package br.com.fcoromoto.desafios.totvs.contas.controller;
 
-import br.com.fcoromoto.desafios.totvs.dto.salvarContaDTO;
-import br.com.fcoromoto.desafios.totvs.dto.ContaDTO;
-import br.com.fcoromoto.desafios.totvs.model.Conta;
-import br.com.fcoromoto.desafios.totvs.model.Situacao;
-import br.com.fcoromoto.desafios.totvs.service.ContaService;
+import br.com.fcoromoto.desafios.totvs.contas.dto.salvarContaDTO;
+import br.com.fcoromoto.desafios.totvs.contas.dto.ContaDTO;
+import br.com.fcoromoto.desafios.totvs.contas.model.Conta;
+import br.com.fcoromoto.desafios.totvs.contas.model.Situacao;
+import br.com.fcoromoto.desafios.totvs.contas.service.ContaService;
 import com.opencsv.exceptions.CsvValidationException;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -82,7 +82,9 @@ public class ContaController {
     }
 
     @PostMapping("/importar-contas")
-    public ResponseEntity<?> importAccounts(@RequestParam("file") MultipartFile file) throws CsvValidationException, IOException {
+    public ResponseEntity<?> importAccounts(@RequestParam("file") MultipartFile file)
+            throws CsvValidationException, IOException {
+
         contaService.importarContas(file);
         return ResponseEntity.noContent().build();
     }

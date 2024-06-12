@@ -1,11 +1,11 @@
-package br.com.fcoromoto.desafios.totvs.service;
+package br.com.fcoromoto.desafios.totvs.contas.service;
 
-import br.com.fcoromoto.desafios.totvs.dto.salvarContaDTO;
-import br.com.fcoromoto.desafios.totvs.dto.ContaDTO;
-import br.com.fcoromoto.desafios.totvs.mapper.ContaMapper;
-import br.com.fcoromoto.desafios.totvs.model.Conta;
-import br.com.fcoromoto.desafios.totvs.model.Situacao;
-import br.com.fcoromoto.desafios.totvs.repository.ContaRepository;
+import br.com.fcoromoto.desafios.totvs.contas.dto.salvarContaDTO;
+import br.com.fcoromoto.desafios.totvs.contas.dto.ContaDTO;
+import br.com.fcoromoto.desafios.totvs.contas.mapper.ContaMapper;
+import br.com.fcoromoto.desafios.totvs.contas.model.Conta;
+import br.com.fcoromoto.desafios.totvs.contas.model.Situacao;
+import br.com.fcoromoto.desafios.totvs.contas.repository.ContaRepository;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 import lombok.AllArgsConstructor;
@@ -21,7 +21,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.math.BigDecimal;
-import java.text.ParseException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;

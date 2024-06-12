@@ -1,0 +1,22 @@
+### Registrando usuario
+POST http://localhost:8080/auth/signup
+accept: */*
+Content-Type: application/json
+
+{
+  "email": "teste@email",
+  "password": "1234",
+  "fullName": "uiser test"
+}
+
+### Login
+POST http://localhost:8080/auth/login
+accept: */*
+Content-Type: application/json
+
+{
+  "email": "teste@email",
+  "password": "1234"
+}
+
+

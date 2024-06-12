@@ -1,4 +1,4 @@
-package br.com.fcoromoto.desafios.totvs.dto;
+package br.com.fcoromoto.desafios.totvs.contas.dto;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
